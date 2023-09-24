@@ -2,7 +2,7 @@ import express from "express";
 import cookieParser from "cookie-parser";
 import multer from "multer";
 // import postRouter from "./routes/posts.js";
-// import authRouter from "./routes/auth.js";
+import artistRoute from "./routes/artistRoute.js";
 import userRoute from "./routes/userRoute.js";
 import cors from "cors";
 import dotenv from 'dotenv';
@@ -22,7 +22,7 @@ app.get("/test", (req, res) => {
 })
 
 // app.use("/api/post", postRouter)
-// app.use("/api/auth", authRouter)
+app.use("/api", artistRoute)
 app.use("/api/user", userRoute)
 
 app.listen(8080, () => {
