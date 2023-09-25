@@ -1,7 +1,7 @@
 import express from "express";
 import cookieParser from "cookie-parser";
 import multer from "multer";
-// import postRouter from "./routes/posts.js";
+import songRoute from "./routes/songRoute.js";
 import artistRoute from "./routes/artistRoute.js";
 import userRoute from "./routes/userRoute.js";
 import cors from "cors";
@@ -21,7 +21,7 @@ app.get("/test", (req, res) => {
     res.json("hello from backend")
 })
 
-// app.use("/api/post", postRouter)
+app.use("/api", songRoute)
 app.use("/api", artistRoute)
 app.use("/api/user", userRoute)
 
